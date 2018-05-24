@@ -1,9 +1,28 @@
 <body><center>
-<body style="background-color: #000000" style="font-size:10px;"><font color="red">
+<body style="background-color: #2980B9" style="font-size:50px;"><font color="black">
 <br>
-Here are the your numbers <%=number1 %>, <%=number2 %>, <%=number3 %>, <%=number4 %>, <%=number5 %>, <%=number6 %>  
+<big><b> Here are the your numbers <%=number1 %>, <%=number2 %>, <%=number3 %>, <%=number4 %>, <%=number5 %>, <%=number6 %>
+<% user_numbers = user_numbers(number1, number2, number3, number4, number5, number6) %>
+<% winning_numbers == winning_numbers() %>  
 <br>
-Today's Winning Numbers are: <%=winning_numbers %>
+Today's Winning Numbers are: <%= winning_numbers %>
 <br>
-Thank you and Good Luck!!!!
+<% count = compare(user_numbers, winning_numbers) %>
+    <% if count == 1 %>
+       you have matched one number!! You should see the look on your face. Still got nuthin though.
+    <% elsif count == 2 %>
+       your getting better, but still no money bags.
+    <% elsif count == 3 %>
+       You won two dollars! Go buy another ticket!
+    <% elsif count == 4 %>
+      You won twenty dollars! Don't spend it all in one place.
+    <% elsif count == 5 %>
+      You won one hundred dollars! Wow, you are lucky.
+    <% elsif count == 6 %>
+      Jackpot! <br>
+     <% else count == 0 %>
+      Better work on your winning tactics!
+    <% end %>
+    <br>
+    <img src='/img/crabby.gif' align="center" style="width:200px;height:200px;">  
 </body></center>
